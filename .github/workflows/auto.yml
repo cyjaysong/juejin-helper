@@ -28,6 +28,10 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Run Project
         run: |
+          echo "开始掘金Jethro自动签到，随机等待 1-30 秒..."
+          ((random=$RANDOM%30+1))
+          sleep $random
+          echo "等待了"$random"秒，继续执行"
           cd workflows
           yarn
           yarn checkin
